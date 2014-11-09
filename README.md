@@ -1,8 +1,10 @@
-powerdns-sqlite3
+powerdns-pipe
 ================
 
-Docker container with the latest Debian Jessie packages of Sqlite 3.8.7 and PowerDNS 3.4
+#THIS IS CURRENTLY A WORK IN PROGRESS
+
+Docker container with the latest Debian Jessie packages of PowerDNS 3.4 with the Pipe backend
 
 Usage:
 
-docker run -d --name pdns -p 53:53/udp -p 53:53/tcp -p 8053:8053 -v /your/shared/volume:/data -e "WEBPASSWD=password" powerdns-sqlite3:latest
+docker run -d --name pdns -p 53:53/udp -p 53:53/tcp -p 80:8081 -e "WEBPASSWD=password" raspberrypython/powerdns-pipe:latest
