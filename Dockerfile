@@ -11,8 +11,10 @@ RUN apt-get clean && apt-get -yq autoremove && rm -rf /var/lib/apt/lists/*
 
 RUN rm -f /etc/powerdns/pdns.d/pdns.simplebind.conf
 
+ADD ./pdns.pipe-consul.conf /etc/powerdns/pdns.d/pdns.pipe-consul.conf
+
 VOLUME ["/data"]
 
 EXPOSE 53/udp 53/tcp 80
 
-CMD /bin/bash
+CMD /usr/sbin/pdns_server
